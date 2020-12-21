@@ -49,7 +49,7 @@ lazy val `izumi-reflect-thirdparty-boopickle-shaded` = project.in(file("izumi-re
       s"-Xmacro-settings:scala-versions=${crossScalaVersions.value.mkString(":")}"
     ),
     sources in (Compile, doc) := { (isSnapshot.value, scalaVersion.value) match {
-      case (_, "3.0.0-M2") => Seq(
+      case (_, "3.0.0-M3") => Seq(
       
       )
       case (_, _) => (sources in (Compile, doc)).value
@@ -94,7 +94,7 @@ lazy val `izumi-reflect-thirdparty-boopickle-shaded` = project.in(file("izumi-re
         "-Ycache-plugin-class-loader:always",
         "-Ycache-macro-class-loader:last-modified"
       )
-      case (_, "2.13.3") => Seq(
+      case (_, "2.13.4") => Seq(
         "-Xlint:_,-eta-sam,-multiarg-infix,-byname-implicit",
         if (insideCI.value) "-Wconf:any:error" else "-Wconf:any:warning",
         "-Wconf:cat=optimizer:warning",
@@ -117,7 +117,7 @@ lazy val `izumi-reflect-thirdparty-boopickle-shaded` = project.in(file("izumi-re
       )
     } },
     mimaPreviousArtifacts := { (isSnapshot.value, scalaVersion.value) match {
-      case (_, "3.0.0-M2") => Set.empty
+      case (_, "3.0.0-M3") => Set.empty
       case (_, _) => Set(organization.value %% name.value % "1.0.0-M2")
     } },
     scalacOptions -= "-Wconf:any:error",
@@ -126,7 +126,7 @@ lazy val `izumi-reflect-thirdparty-boopickle-shaded` = project.in(file("izumi-re
         "-opt:l:inline",
         "-opt-inline-from:izumi.reflect.**"
       )
-      case (false, "2.13.3") => Seq(
+      case (false, "2.13.4") => Seq(
         "-opt:l:inline",
         "-opt-inline-from:izumi.reflect.**"
       )
@@ -134,8 +134,8 @@ lazy val `izumi-reflect-thirdparty-boopickle-shaded` = project.in(file("izumi-re
     } },
     scalaVersion := crossScalaVersions.value.head,
     crossScalaVersions := Seq(
-      "3.0.0-M2",
-      "2.13.3",
+      "3.0.0-M3",
+      "2.13.4",
       "2.12.12",
       "2.11.12"
     )
@@ -190,7 +190,7 @@ lazy val `izumi-reflect` = project.in(file("izumi-reflect/izumi-reflect"))
       s"-Xmacro-settings:scala-versions=${crossScalaVersions.value.mkString(":")}"
     ),
     sources in (Compile, doc) := { (isSnapshot.value, scalaVersion.value) match {
-      case (_, "3.0.0-M2") => Seq(
+      case (_, "3.0.0-M3") => Seq(
       
       )
       case (_, _) => (sources in (Compile, doc)).value
@@ -235,7 +235,7 @@ lazy val `izumi-reflect` = project.in(file("izumi-reflect/izumi-reflect"))
         "-Ycache-plugin-class-loader:always",
         "-Ycache-macro-class-loader:last-modified"
       )
-      case (_, "2.13.3") => Seq(
+      case (_, "2.13.4") => Seq(
         "-Xlint:_,-eta-sam,-multiarg-infix,-byname-implicit",
         if (insideCI.value) "-Wconf:any:error" else "-Wconf:any:warning",
         "-Wconf:cat=optimizer:warning",
@@ -258,7 +258,7 @@ lazy val `izumi-reflect` = project.in(file("izumi-reflect/izumi-reflect"))
       )
     } },
     mimaPreviousArtifacts := { (isSnapshot.value, scalaVersion.value) match {
-      case (_, "3.0.0-M2") => Set.empty
+      case (_, "3.0.0-M3") => Set.empty
       case (_, _) => Set(organization.value %% name.value % "1.0.0-M2")
     } },
     scalacOptions -= "-Wconf:any:error",
@@ -267,7 +267,7 @@ lazy val `izumi-reflect` = project.in(file("izumi-reflect/izumi-reflect"))
         "-opt:l:inline",
         "-opt-inline-from:izumi.reflect.**"
       )
-      case (false, "2.13.3") => Seq(
+      case (false, "2.13.4") => Seq(
         "-opt:l:inline",
         "-opt-inline-from:izumi.reflect.**"
       )
@@ -275,8 +275,8 @@ lazy val `izumi-reflect` = project.in(file("izumi-reflect/izumi-reflect"))
     } },
     scalaVersion := crossScalaVersions.value.head,
     crossScalaVersions := Seq(
-      "3.0.0-M2",
-      "2.13.3",
+      "3.0.0-M3",
+      "2.13.4",
       "2.12.12",
       "2.11.12"
     )
@@ -306,8 +306,8 @@ lazy val `izumi-reflect-root-jvm` = (project in file(".agg/.agg-jvm"))
   .settings(
     skip in publish := true,
     crossScalaVersions := Seq(
-      "3.0.0-M2",
-      "2.13.3",
+      "3.0.0-M3",
+      "2.13.4",
       "2.12.12",
       "2.11.12"
     ),
@@ -351,7 +351,7 @@ lazy val `izumi-reflect-root` = (project in file("."))
       s"-Xmacro-settings:git-head-commit=${com.typesafe.sbt.SbtGit.GitKeys.gitHeadCommit.value.getOrElse("")}"
     ),
     crossScalaVersions := Nil,
-    scalaVersion := "3.0.0-M2",
+    scalaVersion := "3.0.0-M3",
     organization in ThisBuild := "dev.zio",
     sonatypeProfileName := "dev.zio",
     sonatypeSessionName := s"[sbt-sonatype] ${name.value} ${version.value} ${java.util.UUID.randomUUID}",
